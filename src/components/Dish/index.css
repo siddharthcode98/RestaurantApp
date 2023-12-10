@@ -27,9 +27,11 @@
     grid-template-columns: auto 100px 100px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 375px) {
   .grid-layout {
     grid-template-columns: auto 80px 80px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
 .food-Image {
@@ -46,13 +48,20 @@
 }
 @media screen and (max-width: 320px) {
   .food-Image {
-    height: 80px;
-    width: 80px;
+    height: 60px;
+    width: 60px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .food-Image {
+    height: 60px;
+    width: 60px;
   }
 }
 
 .dish-name {
   font-weight: bold;
+  font-size: 20px;
 }
 .font-weight-2 {
   font-weight: 500;
@@ -99,4 +108,19 @@
   .calories {
     font-size: 12px;
   }
+}
+.dish-text-container {
+  display: flex;
+  flex-direction: column;
+}
+.addtoCart {
+  align-self: flex-start;
+  height: 30px;
+  width: 100px;
+  margin-bottom: 10px;
+  border: 1px solid rgb(58, 231, 11);
+  border-radius: 5px;
+  background-color: #008000;
+  border-style: none;
+  color: #fff;
 }

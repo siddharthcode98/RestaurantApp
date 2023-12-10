@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 
 import "./index.css";
@@ -11,11 +12,17 @@ const Header = () => (
         <header>
           <div className="nav-container">
             <nav className="nav-bar">
-              <h1 className="restaurant-name">UNI Resto Cafe</h1>
+              <Link to="/" style={{ textDecoration: "none" }}>
+                <h1 className="restaurant-name">UNI Resto Cafe</h1>
+              </Link>
+
               <div className="my-order-container">
                 <p>My Orders</p>
-                <AiOutlineShoppingCart className="cart-icon" />
-                <p className="cart-number">{cartItems}</p>
+                <Link to="/cart" style={{ textDecoration: "none" }}>
+                  <AiOutlineShoppingCart className="cart-icon" />
+                </Link>
+
+                <p className="cart-number">{cartItems.length}</p>
               </div>
             </nav>
           </div>

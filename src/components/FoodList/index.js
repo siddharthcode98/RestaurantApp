@@ -6,8 +6,6 @@ import Dish from "../Dish";
 
 import MenuItem from "../MenuItem";
 
-import Header from "../Header";
-
 import "./index.css";
 
 class FoodList extends Component {
@@ -82,7 +80,6 @@ class FoodList extends Component {
           <Loader type="Oval" color={"green"} className="loader-style" />
         ) : (
           <>
-            <Header />
             <div>
               <ul className="menu-category-list-container">
                 {listOfItem.map((item) => (

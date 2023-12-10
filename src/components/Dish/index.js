@@ -8,6 +8,8 @@ const Dish = (props) => {
   const { dishes } = props;
   // console.log(dishes);
   const {
+    // eslint-disable-next-line
+    dishId,
     addonCat,
     dishCalories,
     dishCurrency,
@@ -35,20 +37,21 @@ const Dish = (props) => {
   return (
     <CartContext.Consumer>
       {(value) => {
-        const { IncreaseCartItems, DecreaseCartItems } = value;
+        const { DecreaseCartItems, addCartItem } = value;
+
         const onClickIncrement = () => {
-          IncreaseCartItems();
           setCount(count + 1);
         };
         const onClickDecrement = () => {
-          DecreaseCartItems();
-          if (count !== 0) {
+          if (count > 1) {
+            DecreaseCartItems({ ...dishes, count });
+          } else {
             setCount(count - 1);
           }
         };
         return (
           <li className="grid-layout">
-            <div>
+            <div className="dish-text-container">
               <h1 className="dish-name">{dishName}</h1>
               <p className="font-weight-2">
                 {dishCurrency} {dishPrice}
@@ -76,6 +79,17 @@ const Dish = (props) => {
               <p className={`${customization} text-display`}>
                 {availability()}
               </p>
+              {count > 0 && (
+                <button
+                  type="button"
+                  className="addtoCart"
+                  onClick={() => {
+                    addCartItem({ ...dishes, count });
+                  }}
+                >
+                  ADD TO CART
+                </button>
+              )}
             </div>
 
             <p className="calories">{dishCalories} calories</p>

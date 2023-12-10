@@ -18,7 +18,7 @@
 }
 .cart-number {
   position: absolute;
-  top: 25px;
+  top: 8px;
   right: 20px;
   box-sizing: border-box;
   padding-left: 3px;
@@ -30,12 +30,16 @@
   font-weight: bold;
   color: aliceblue;
 }
+.restaurant-name {
+  text-decoration: none;
+  color: rgb(79, 146, 12);
+}
 @media screen and (max-width: 576px) {
   .restaurant-name {
     font-size: 15px;
   }
   .cart-number {
-    top: 20px;
+    top: 1px;
     right: 22px;
     height: 12px;
     width: 12px;
@@ -43,12 +47,12 @@
     font-size: 6px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 425px) {
   .restaurant-name {
     font-size: 15px;
   }
   .cart-number {
-    top: 20px;
+    top: 1px;
     right: 22px;
     height: 12px;
     width: 12px;
